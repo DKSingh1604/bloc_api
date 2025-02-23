@@ -1,0 +1,2 @@
+C:/Users/dev16/OneDrive/Documents/bloc_api/android/app/.cxx/Debug/3o1t1h18/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/dev16/OneDrive/Documents/bloc_api/android/app/.cxx/Debug/3o1t1h18/armeabi-v7a/CMakeFiles/rebuild_cache.dir
