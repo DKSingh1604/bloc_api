@@ -4,7 +4,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'http/http.dart';
+import 'package:http/http.dart' as http;
 
 part 'posts_bloc_event.dart';
 part 'posts_bloc_state.dart';
@@ -18,14 +18,12 @@ class PostsBlocBloc extends Bloc<PostsBlocEvent, PostsBlocState> {
       PostsInitialFetchEvent event, Emitter<PostsBlocState> emit) async {
     var client = http.Client();
     try {
-      var response = await client.post(
-          Uri.https('example.com', 'whatsit/create'),
-          body: {'name': 'doodle', 'color': 'blue'});
-      var decodedResponse = jsonDecode(utf8.decode(response.bodyBytes)) as Map;
-      var uri = Uri.parse(decodedResponse['uri'] as String);
-      print(await client.get(uri));
-    } finally {
-      client.close();
+      var response = await client.get(
+        Uri.https('https://jsonplaceholder.typicode.com/guide/'),
+      );
+      print(response.body);
+    } catch (e) {
+      print(e.toString());
     }
   }
 }
