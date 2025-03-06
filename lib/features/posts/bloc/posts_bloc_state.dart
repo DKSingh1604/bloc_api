@@ -23,3 +23,7 @@ final class PostFetchingSuccessfulState extends PostsBlocState {
     required this.posts,
   });
 }
+
+class PostsAdditionSuccessState extends PostsActionState {}
+
+class PostAdditionErrorState extends PostsActionState {}
